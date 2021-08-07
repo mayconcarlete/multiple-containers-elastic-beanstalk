@@ -17,6 +17,7 @@ services:
     build:
       context: ./hello-3
       dockerfile: Dockerfile
+    command: ['npm', 'start']
 
   nginx:
     restart: always

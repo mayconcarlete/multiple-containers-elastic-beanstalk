@@ -1,0 +1,36 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "nginx",
+            "image": "mayconcarleterodrigues/nginx",
+            "hostname": "nginx",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": ["hello-1-container", "hello-2-container", "hello-3-container"]
+        },
+        {
+            "name": "hello-1-container",
+            "image": "mayconcarleterodrigues/hello-1",
+            "hostname": "api-1",
+            "essential": false
+        },
+        {
+            "name": "hello-2-container",
+            "image": "mayconcarleterodrigues/hello-2",
+            "hostname": "api-2",
+            "essential": false
+        },
+        {
+            "name": "hello-3-container",
+            "image": "mayconcarleterodrigues/hello-3",
+            "hostname": "api-3",
+            "essential": false
+        }
+    ]
+}

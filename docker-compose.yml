@@ -29,5 +29,5 @@ services:
       - api-2
       - api-3
     ports: 
-      - 3050:80
+      - 80:80
     
